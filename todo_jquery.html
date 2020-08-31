@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery | TODO-3</title>
+    <link href="css/header_style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/app_jquery.css">
+    <link href="https://fonts.googleapis.com/css?family=Stardos+Stencil:400,700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/e3ae05b8e6.js"></script>
+    <!-- favicon -->
+    <link href="favicon.ico" rel="shortcut icon">
+</head>
+<body>
+<!-- =================================
+ヘッダー
+================================= -->
+<header class="header">
+    <ul class="header__nav">
+        <li>
+            <a href="index.html">Top</a>
+        </li>
+        <li>
+            <a href="todo_jquery.html">jQuery</a>
+        </li>
+        <li>
+            <a href="todo_backbone.html">Backbone.js</a>
+        </li>
+        <li>
+            <a href="todo_vue.html">Vue.js</a>
+        </li>
+    </ul>
+</header>
+
+<!-- =================================
+メインコンテンツ
+================================= -->
+<main class="main">
+
+    <!-- タイトル -->
+    <h1 class="title">ToDo List<span>using jQuery</span></h1>
+
+    <!-- 入力フォーム -->
+    <form class="form">
+        <div class="inputArea">
+        <input type="text" class="inputText js-get-val" value="" placeholder="ToDoを入力">
+        <p class="error js-toggle-error">何も入力されていません</p>
+        </div>
+        <button class="btn js-add-todo">リストに追加</button>
+    </form>
+
+    <!-- 検索BOX -->
+    <div class="searchBox">
+        <i class="fa fa-search searchBox__icon" aria-hidden="true"></i>
+        <input type="text" class="searchBox__input js-search" value="" placeholder="Search">
+    </div>
+
+    <!-- TODOリスト -->
+    <ul class="list js-todo_list">
+        <!-- 未完了TODOタスクリスト -->
+        <li class="list__item js-todo_list-item" data-text="sample1">
+            <i class="fa fa-square-o icon-check js-click-done" aria-hidden="true"></i>
+            <span class="js-todo_list-text">sample1</span>
+            <input type="text" class="editText js-todo_list-editForm" value="sample1">
+            <i class="fa fa-trash icon-trash js-click-trash" aria-hidden="true"></i>
+        </li>
+        <!-- 完了TODOタスクリスト -->
+        <li class="list__item list__item--done js-todo_list-item" data-text="sample2">
+            <i class="fa fa-check-square icon-check js-click-todo" aria-hidden="true"></i>
+            <span class="js-todo_list-text">sample2</span>
+            <input type="text" class="editText js-todo_list-editForm" value="sample2">
+            <i class="fa fa-trash icon-trash js-click-trash" aria-hidden="true"></i>
+        </li>
+    </ul>
+
+</main>
+
+<script src="js/app_jquery.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+/* 全体 */
+html, body, h1, ul, li, p, a {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background: #222;
+}
+ul, li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #EAE7E5;
+    transition: opacity .3s;
+}
+a:hover {
+    transition: opacity .3s;
+    opacity: .5;
+}
+
+
+/* メインコンテンツ */
+.main {
+    max-width: 800px;
+    margin:0 auto;
+    padding: 100px 10px 0 10px;
+    box-sizing: border-box;
+}
+.titleWrap {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 60px;
+    color: #a8a8a8;
+}
+.titleWrap h1 {
+    font-size: 100px;
+    letter-spacing: 10px;
+    font-family: 'Noto Serif', serif;
+    font-weight: 400;
+}
+.titleWrap p {
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.linkWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.linkWrap li {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 10px;
+    transition: opacity .3s;
+}
+.linkWrap li:hover {
+    transition: opacity .3s;
+    opacity: .5;
+}
+.linkWrap li.jquery {
+    background: rgb(242, 183, 175);
+}
+.linkWrap li.backbone {
+    background: #83B2B8;
+}
+.linkWrap li.vue {
+    background: #0D3D42;
+}
+.linkWrap li a {
+    display: block;
+    text-align: center;
+    line-height: 200px;
+    font-size: 16px;
+    letter-spacing: 2px;
+}

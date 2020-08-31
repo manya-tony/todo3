@@ -1,0 +1,143 @@
+body{
+  background: #F2B7AF;
+  color: #082A4C;
+  margin: 0;
+  padding: 0;
+  font-family: Quicksand, 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+h1, p {
+  margin: 0;
+  padding: 0;
+}
+.main{
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+.title {
+  font-size: 60px;
+  color: white;
+  text-align: center;
+  letter-spacing: .2em;
+  margin-bottom: 30px;
+  font-family: 'Stardos Stencil', cursive;
+  line-height: 66px;
+}
+.title span {
+  display: block;
+  font-size: 24px;
+  font-weight: normal;
+  letter-spacing: .1em;
+}
+.form{
+  text-align: right;
+  border-bottom: 1px dotted #082A4C;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+.inputText{
+  padding: 5px;
+  height: 40px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border:none;
+}
+.btn{
+  display: block;
+  padding: 5px 30px;
+  background: #082A4C;
+  color: #fff;
+  border: none;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 15px;
+  border-radius: 2px;
+  transition: .5s transform;
+}
+.btn:hover{
+  transition: .5s;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.error{
+  text-align: center;
+  display: none;
+  color: #BF5B55;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+.searchBox{
+  width: 100%;
+  height: 40px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  background: #F2D9BC;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+.searchBox__icon{
+  width: 16px;
+  font-size: 18px;
+  margin-right: 5px;
+  color: #082A4C;
+}
+.searchBox__input{
+  width: calc(100% - 30px);
+  height: 100%;
+  border: none;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  font-size: 16px;
+  background: #F2D9BC;
+  color: #082A4C;
+}
+.list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.list__item{
+  overflow: hidden;
+  padding: 15px 15px;
+  background: #fff;
+  margin-bottom: 5px;
+  transition: .5s transform;
+}
+.list__item:hover{
+  transform: scale(1.02);
+  transition: .5s transform;
+}
+.list__item--done{
+  background: rgb(154, 170, 194);
+  color: #082A4C;
+}
+.icon-square, .icon-check, .icon-sort, .icon-trash{
+  cursor: pointer;
+  transition: .5s transform;
+}
+.icon-square:hover, .icon-check:hover, .icon-sort:hover, .icon-trash:hover{
+  transform: scale(1.2);
+  transition: .5s transform;
+}
+.icon-trash{
+  float: right;
+  top: 4px;
+  position: relative;
+  color: #BF5B55;
+}
+.icon-square, .icon-check{
+  margin-right: 15px;
+}
+.editText{
+  display: none;
+  width: 80%;
+  height: 100%;
+  border: none;
+  padding: 5px 10px;
+  font-size: 16px;
+}

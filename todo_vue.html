@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vue.js | TODO-3</title>
+    <link href="css/header_style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/app_vue.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/e3ae05b8e6.js"></script>
+    <!-- favicon -->
+    <link href="favicon.ico" rel="shortcut icon">
+</head>
+<body>
+<!-- =================================
+ヘッダー
+================================= -->
+<header class="header">
+    <ul class="header__nav">
+        <li>
+            <a href="index.html">Top</a>
+        </li>
+        <li>
+            <a href="todo_jquery.html">jQuery</a>
+        </li>
+        <li>
+            <a href="todo_backbone.html">Backbone.js</a>
+        </li>
+        <li>
+            <a href="todo_vue.html">Vue.js</a>
+        </li>
+    </ul>
+</header>
+
+<!-- =================================
+メインコンテンツ
+================================= -->
+<main class="main" id="app">
+
+    <!-- タイトル -->
+    <h1 class="title">ToDo List<span>using Vue.js</span></h1>
+
+    <!-- 入力フォーム -->
+    <form class="form">
+        <div class="inputArea">
+            <input v-model="newText" type="text" class="inputText" value="" placeholder="ここにTODO内容を書く">
+            <span class="error" v-show="hasError">{{ errorMsg }}</span>
+        </div>
+        <button class="btn" v-on:click="addToList">TODOを追加</button>
+    </form>
+
+    <!-- 検索BOX -->
+    <div class="searchBox">
+        <i class="fa fa-search searchBox__icon" aria-hidden="true"></i>
+        <input v-model="searchWord" type="text" class="searchBox__input" value="" placeholder="Search">
+    </div>
+
+    <!-- TODOリスト -->
+    <ul class="list">
+        
+        <li v-for="item in filterList" v-bind:key="item.id" v-bind:class="{'list__item--done': item.checked}" class="list__item">
+            <i v-on:click="doChange(item)" class="fa icon-check" v-bind:class="[item.checked ? 'fa-check-square' : 'fa-square-o']" aria-hidden="true"></i>
+            <span v-if="!item.editMode" v-on:click="doEditMode(item)">{{ item.text }}</span>
+            <input v-else v-on:keydown.enter.shift="closeEditMode(item)" v-model="item.text" type="text" class="editText" value="">
+            <i v-on:click="remove(item)" class="fa fa-trash icon-trash" aria-hidden="true"></i>
+        </li>
+
+    </ul>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/app_vue.js"></script>
+</body>
+</html>

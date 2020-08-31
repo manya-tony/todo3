@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Backbone.js | TODO-3</title>
+    <link href="css/header_style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/app_backbone.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/e3ae05b8e6.js"></script>
+    <!-- favicon -->
+    <link href="favicon.ico" rel="shortcut icon">
+</head>
+<body>
+<!-- =================================
+ヘッダー
+================================= -->
+<header class="header">
+    <ul class="header__nav">
+        <li>
+            <a href="index.html">Top</a>
+        </li>
+        <li>
+            <a href="todo_jquery.html">jQuery</a>
+        </li>
+        <li>
+            <a href="todo_backbone.html">Backbone.js</a>
+        </li>
+        <li>
+            <a href="todo_vue.html">Vue.js</a>
+        </li>
+    </ul>
+</header>
+
+<!-- =================================
+メインコンテンツ
+================================= -->
+<main class="main" id="app">
+
+    <!-- タイトル -->
+    <h1 class="title">ToDo List<span>using Backbone.js</span></h1>
+
+    <!-- 入力フォーム -->
+    <form class="form js-form"></form>
+
+    <!-- 検索BOX -->
+    <div class="searchBox js-searchBox">
+        <i class="fa fa-search searchBox__icon" aria-hidden="true"></i>
+        <input type="text" class="searchBox__input js-search" value="" placeholder="Search">
+    </div>
+
+    <!-- TODOリスト -->
+    <ul class="list js-todo_list"></ul>
+
+    <!-- テンプレート TODOリスト  -->
+    <script type="text/template" id="template-list-item">
+        <% if(isShow){ %>
+            <li class="list__item js-todo_list-item <% if(isDone){ %>list__item--done<% } %>">
+                <i class="fa <% if(isDone){ %>fa-check-square<% } else { %>fa-square-o<% } %> icon-check js-toggle-done" aria-hidden="true"></i>
+                <% if(!editMode) { %>
+                    <span class="js-todo_list-text"><%= text %></span>
+                <% }else{ %>
+                    <input type="text" class="editText js-todo_list-editForm" value="<%= text %>">
+                <% } %>
+                <i class="fa fa-trash icon-trash js-click-trash" aria-hidden="true"></i>
+            </li>
+        <% } %>
+    </script>
+
+    <!-- テンプレート 入力フォーム -->
+    <script type="text/template" id="template-form">
+        <div class="inputArea">
+            <input type="text" class="inputText js-get-val" value="" placeholder="ToDoを入力">
+            <% if(hasError) { %>
+                <span class="error"><%= errorMsg %></span>
+            <% } %>
+        </div>
+        <button class="btn js-add-todo">リストに追加</button>
+    </script>
+
+</main>
+
+<script src="js/bundle_backbone.js"></script>
+</body>
+</html>
